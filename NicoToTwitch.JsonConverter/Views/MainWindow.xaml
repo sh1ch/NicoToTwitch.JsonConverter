@@ -11,6 +11,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <ContentControl Grid.Row="0" prism:RegionManager.RegionName="BodyRegion" />
+        <ContentControl Grid.Row="0"
+                        Margin="10"
+                        prism:RegionManager.RegionName="BodyRegion" />
     </Grid>
 </Window>

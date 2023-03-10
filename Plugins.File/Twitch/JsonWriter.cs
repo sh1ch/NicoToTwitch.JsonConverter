@@ -19,28 +19,15 @@ public class JsonWriter
     {
     }
 
-    public static void Write(string filePath)
+    public static void Write(string filePath, v1.ChatData chatData)
     {
-        var file = new v1.ChatData();
-
-        file.Streamer.Name = "永井博之";
-        file.Video.Length = 30 * 1;
-        file.Video.End = 30 * 1;
-        file.Video.Title = "サンプルタイトル";
-
-        var badges = new List<UserBadge>();
-
-        file.Add("なまえA", 3, "テスト3", UserColors.GetRandom(), badges);
-        file.Add("なまえB", 5, "テスト５", UserColors.GetRandom(), badges);
-        file.Add("なまえC", 10, "テスト10", UserColors.GetRandom(), badges);
-
         var options = new JsonSerializerOptions
         {
             Encoder = JavaScriptEncoder.Create(UnicodeRanges.All),
             WriteIndented = true,
         };
 
-        var jsonText = JsonSerializer.Serialize<v1.ChatData>(file, options);
+        var jsonText = JsonSerializer.Serialize<v1.ChatData>(chatData, options);
 
         System.IO.File.WriteAllText(filePath, jsonText, Encoding.UTF8);
     }

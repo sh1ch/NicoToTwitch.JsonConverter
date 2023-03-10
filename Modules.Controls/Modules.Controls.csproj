@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\HeritageLibrary\HeritageLibrary.Windows.Dialogs\HeritageLibrary.Windows.Dialogs.csproj" />
+    <ProjectReference Include="..\..\HeritageLibrary\HeritageLibrary.Wpf.Controls\HeritageLibrary.Wpf.Controls.csproj" />
+    <ProjectReference Include="..\..\HeritageLibrary\HeritageLibrary.Wpf\HeritageLibrary.Wpf.csproj" />
+    <ProjectReference Include="..\..\HeritageLibrary\HeritageLibrary\HeritageLibrary.csproj" />
     <ProjectReference Include="..\Modules.Core\Modules.Core.csproj" />
   </ItemGroup>
 

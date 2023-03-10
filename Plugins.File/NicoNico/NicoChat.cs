@@ -65,6 +65,22 @@ public record NicoChat
     /// コメントを取得します。
     /// </summary>
     public string Comment { get; init; } = "";
+    
+    /// <summary>
+    /// ユーザーの略称名を取得します。
+    /// </summary>
+    public string AbbreviatedName
+    {
+        get
+        {
+            if (string.IsNullOrEmpty(UserId)) return "ななしのよっしん";
+
+            var length = UserId.Length >= 5 ? 5 : UserId.Length;
+
+            return $"ニコ房_{UserId.Substring(0, length)}";
+        }
+    }
+
     /// <summary>
     /// <see cref="NicoChat"/> クラスの新しいインスタンスを初期化します。
     /// </summary>
